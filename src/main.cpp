@@ -1,11 +1,11 @@
 #include <iostream>
-#include "PositionErrorEvent.h"
+#include "CameraModule.h"
+#include "CommandInterpreterModule.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	PositionErrorEvent e;
-	throw e;
-	cout << 1 << endl;
+	CameraModule camera;
+	CommandInterpreterModule commandInterpreter;
 	return 0;
 }
