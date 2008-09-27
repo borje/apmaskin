@@ -1,6 +1,6 @@
 #include "CommandInterpreterModule.h"
 #include <iostream>
-#include <pthreads>
+#include <pthread.h>
 
 using namespace std;
 

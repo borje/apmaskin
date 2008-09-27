@@ -7,9 +7,9 @@
 <toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.1647038708" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.635110491" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
 <option id="gnu.cpp.compiler.option.include.paths.1459634338" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin2/src/interfaces}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin2/src/CommandInterpreterModule}&quot;"/>
-<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin2/src/CameraModule}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin/src/interfaces}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin/src/CommandInterpreterModule}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin/src/CameraModule}&quot;"/>
 </option>
 </tool>
 <tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.314928156" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug"/>
