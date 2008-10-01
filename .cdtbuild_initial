@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 3.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="Apmaskin.cdt.managedbuild.target.gnu.exe.1526421828" name="Executable (Gnu)" projectType="cdt.managedbuild.target.gnu.exe">
+<configuration artifactName="Apmaskin" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.exe.debug.1231892872" name="Debug" parent="cdt.managedbuild.config.gnu.exe.debug">
+<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.1647038708" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.635110491" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
+<option id="gnu.cpp.compiler.option.include.paths.1459634338" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin/src/interfaces}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin/src/CommandInterpreterModule}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Apmaskin/src/CameraModule}&quot;"/>
+</option>
+</tool>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.314928156" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.304692136" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1884698043" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
+<option id="gnu.cpp.link.option.libs.1415382168" superClass="gnu.cpp.link.option.libs" valueType="libs">
+<listOptionValue builtIn="false" value="pthread"/>
+</option>
+</tool>
+<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.1045337737" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug"/>
+<macros/>
+</toolChain>
+</configuration>
+<configuration artifactName="Apmaskin" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.gnu.exe.release.1120053643" name="Release" parent="cdt.managedbuild.config.gnu.exe.release">
+<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.1288589386" name="GCC Tool Chain" superClass="cdt.managedbuild.toolchain.gnu.exe.release">
+<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1204337795" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release"/>
+<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.1635101133" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release"/>
+<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.712473510" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release"/>
+<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.942776264" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release"/>
+<tool id="cdt.managedbuild.tool.gnu.assembler.exe.release.1802232770" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.release"/>
+</toolChain>
+</configuration>
+<macros/>
+</project>
+</ManagedProjectBuildInfo>
