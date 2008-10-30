@@ -1,13 +1,14 @@
 #ifndef COMMANDINTERPRETERMODULE_H_
 #define COMMANDINTERPRETERMODULE_H_
 
-#include "IEventListener.h"
+#include  "IEventListener.h"
+class IEvent;
 
 class CommandInterpreterModule : public IEventListener {
 public:
 	CommandInterpreterModule();
-	virtual ~CommandInterpreterModule();
-	void eventHandler(IEvent e);
+	~CommandInterpreterModule();
+	void eventHandler(IEvent* e);
 };
 
 #endif /*COMMANDINTERPRETERMODULE_H_*/

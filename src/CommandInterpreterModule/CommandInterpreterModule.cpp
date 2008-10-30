@@ -2,6 +2,8 @@
 #include <iostream>
 #include <pthread.h>
 
+#include "IEvent.h"
+
 using namespace std;
 
 CommandInterpreterModule::CommandInterpreterModule() {
@@ -9,8 +11,9 @@ CommandInterpreterModule::CommandInterpreterModule() {
 }
 
 CommandInterpreterModule::~CommandInterpreterModule() {
+	cout << "Destroying command interpreter module" << endl;
 }
 
-void CommandInterpreterModule::eventHandler(IEvent i) {
-	
+void CommandInterpreterModule::eventHandler(IEvent* i) {
+
 }
