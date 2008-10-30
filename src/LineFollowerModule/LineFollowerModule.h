@@ -7,14 +7,17 @@
 
 #ifndef LINEFOLLOWERMODULE_H_
 #define LINEFOLLOWERMODULE_H_
+#include <iostream>
 
 #include "IEventListener.h"
+
+class IEvent;
 
 class LineFollowerModule: public IEventListener {
 public:
 	LineFollowerModule();
-	virtual ~LineFollowerModule();
-	void eventHandler(IEvent e);
+	~LineFollowerModule();
+	void eventHandler(IEvent* e);
 };
 
 #endif /* LINEFOLLOWERMODULE_H_ */

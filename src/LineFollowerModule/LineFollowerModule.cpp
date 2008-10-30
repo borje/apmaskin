@@ -5,8 +5,10 @@
  *      Author: daniel.bengtsson
  */
 
-#include "LineFollowerModule.h"
 #include <iostream>
+
+#include "LineFollowerModule.h"
+#include "IEvent.h"
 
 using namespace std;
 
@@ -16,9 +18,9 @@ LineFollowerModule::LineFollowerModule() {
 }
 
 LineFollowerModule::~LineFollowerModule() {
-	// TODO Auto-generated destructor stub
+	std::cout << "Destroying LineFollowerModule" << std::endl;
 }
 
-void LineFollowerModule::eventHandler(IEvent e) {
+void LineFollowerModule::eventHandler(IEvent* e) {
 
 }
