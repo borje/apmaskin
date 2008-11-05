@@ -18,10 +18,6 @@ CameraModule::CameraModule() {
 	cout << "Camera module created" << endl;
 }
 
-CameraModule::~CameraModule() {
-	cout << "Destroying camera module" << endl;
-}
-
 string CameraModule::saveSnapshot(){
 	return string("kanin");
 }

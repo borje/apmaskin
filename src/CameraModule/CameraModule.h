@@ -5,9 +5,9 @@
 
 #include "IEvent.h"
 #include "IEventGenerator.h"
-
+#include <string>
 class IEventListener;
-class string;
+
 using namespace std;
 
 class CameraModule : public IEventGenerator {
