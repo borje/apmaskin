@@ -1,0 +1,68 @@
+CameraModule Description
+
+The camera module is an event generator. It will with a set
+time interval take pictures, analyze them and generate events that reflect what is seen in the picture.
+
+Possible issues
+---------------------------------------------------
+* From the client perspective, if no events are received from
+  the camera module, then how do they analyze the situation?
+
+  - Create events to cover any interesting situation. Clients
+    must handle situations where the camera can not clearly
+    express the situation with events. E.g. when turning at
+    a crossing.
+
+Commands provided by CameraModule
+---------------------------------------------------
+* TakePicture
+  Shall transmit, or dump to file, the picture that is seen
+  by the camera when the command is issued.
+
+* <TBD>
+
+* <TBD>
+
+
+Generated Events
+---------------------------------------------------
+* POSITION_ERROR_EVENT
+  A picture has been analyzed and a line deviation from the
+  desired position has been calculated. This deviation is
+  provided with the event.
+
+* MISALIGNED_TO_LINE_EVENT
+  <TBD: Decide about the existence of this event>
+  A picture has been analyzed and a line has been identified
+  and the Apmaskin has an improper alignment with the line.
+  The Apmaskin's attitude towards the line, in line k-value,
+  and its straightahead-distance to the line will be provided
+  with the event.
+
+* INTERSECTION_DETECTED_EVENT
+  A picture has been analyzed and an intersection on a line
+  has been discovered. The direction(s) of the intersection
+  is provided with the event.
+
+* NUMBER_FOUND_EVENT
+  A picture has been analyzed and a number has been
+  identified. The number is provided with the event.
+
+
+Functionality
+---------------------------------------------------
+The CameraModule will take pictures repeatedly with a
+time interval specified by CAMERAMODULE_PICTURE_TIME_INTERVAL.
+Each picture will be analyzed by CameraModule to determine
+what is seen in the picture.
+
+CameraModule will try to identify the following patterns in
+a picture:
+
+* Line
+  If a line is seen in the picture and the Apmaskin is
+  aligned with the line a POSITION_ERROR_EVENT will be
+  generated. If the Apmaskin is not aligned with the line a
+  MISALIGNED_TO_LINE_EVENT will be generated.
+
+* 
