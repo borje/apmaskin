@@ -24,7 +24,7 @@ typedef struct WhiteSegmentDescriptor
 
 typedef struct WhiteSegmentArray
 {
-  WhiteSegmentDescriptor_t[WHITE_SEGMENT_ARRAY_LENGTH];  // TODO: Syntax error?!
+  WhiteSegmentDescriptor_t[WHITE_SEGMENT_ARRAY_LENGTH] SegmentArray;  // TODO: Syntax error?!
   unsigned int NumberOfWhiteSegments;
 } WhiteSegmentArray_t;
 
