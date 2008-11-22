@@ -1,7 +1,8 @@
 CameraModule Description
 
 The camera module is an event generator. It will with a set
-time interval take pictures, analyze them and generate events that reflect what is seen in the picture.
+time interval take pictures, analyze them and generate events
+that reflect what is seen in the picture.
 
 Possible issues
 ---------------------------------------------------
@@ -31,8 +32,7 @@ Generated Events
   desired position has been calculated. This deviation is
   provided with the event.
 
-* MISALIGNED_TO_LINE_EVENT
-  <TBD: Decide about the existence of this event>
+* MISALIGNED_TO_LINE_EVENT  ## CANCELED ##
   A picture has been analyzed and a line has been identified
   and the Apmaskin has an improper alignment with the line.
   The Apmaskin's attitude towards the line, in line k-value,
@@ -47,6 +47,9 @@ Generated Events
 * NUMBER_FOUND_EVENT
   A picture has been analyzed and a number has been
   identified. The number is provided with the event.
+  
+* OFF_TRACK_EVENT
+  A picture has been analyzed but no line has been found.
 
 
 Functionality
@@ -56,13 +59,28 @@ time interval specified by CAMERAMODULE_PICTURE_TIME_INTERVAL.
 Each picture will be analyzed by CameraModule to determine
 what is seen in the picture.
 
-CameraModule will try to identify the following patterns in
-a picture:
+CameraModule will analyze a picture as described in module
+sequence diagrams (TBD: sequence diagrams).
 
-* Line
-  If a line is seen in the picture and the Apmaskin is
-  aligned with the line a POSITION_ERROR_EVENT will be
-  generated. If the Apmaskin is not aligned with the line a
-  MISALIGNED_TO_LINE_EVENT will be generated.
 
-* 
+
+
+
+--------- OLD STUFF -----------------------------------
+
+* A sequence of pixels along a horizontal line at the
+  vertical height specified by
+  LINE_READ_VERTICAL_HEIGHT in a picture will be analyzed
+  to determine if they are white or not.
+  
+* If a sequence of white pixels within the interval
+  [MIN_LINE_WIDTH, MAX_LINE_WIDTH] is found then it will be
+  interpreted as the line to follow and the center of the
+  line will be calculated. The center of the line will be
+  compared with the desired position of the line center,
+  LINE_TARGET, and the difference will be broadcasted as a
+  POSITION_ERROR_EVENT.
+  
+* If no sequence of white pixels is found ( other than what
+  can be disregarded as distortion ), then an
+  OFF_TRACK_EVENT will be broadcasted.
