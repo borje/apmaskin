@@ -5,28 +5,14 @@
 #include "IEventListener.h"
 #include "IEventGenerator.h"
 #include "ICommandServer.h"
+#include "CameraPicture.h"
 
 #include <list>
+#include <vector>
 
 using namespace std;
 
-typedef unsigned int PictureCoordinate_t;
-
-typedef struct WhiteSegmentDescriptor
-{
-  PictureCoordinate_t Leftmost;
-  PictureCoordinate_t Rightmost;
-  PictureCoordinate_t Center;
-  PictureCoordinate_t Width;
-} WhiteSegmentDescriptor_t;
-
-#define WHITE_SEGMENT_ARRAY_LENGTH 10
-
-typedef struct WhiteSegmentArray
-{
-  WhiteSegmentDescriptor_t[WHITE_SEGMENT_ARRAY_LENGTH] SegmentArray;  // TODO: Syntax error?!
-  unsigned int NumberOfWhiteSegments;
-} WhiteSegmentArray_t;
+class WhiteSegmentDescriptor; // Forward declaration of WhiteSegmentDescriptor. Clients of CameraModule do not need to know about it.
 
 class CameraModule : public IEventGenerator, ICommandServer {
 private:
@@ -34,8 +20,10 @@ private:
 	list<IEventListener*> intersectionFoundListeners;
 	list<IEventListener*> numberFoundListeners;
 
-	// TODO: Write function description here?
-	WhiteSegmentArray_t horizontalSweep( PictureCoordinate_t startCoordinate, PictureCoordinate_t sweepWidth );
+	bool horizontalSweep( CameraPicture* picture_p, PictureCoordinate_t verticalCoordinate, PictureCoordinate_t startCoordinate,
+	                       PictureCoordinate_t sweepWidth, vector<WhiteSegmentDescriptor>* whiteSegmentVector_p );
+	bool verticalSweep( CameraPicture* picture_p, PictureCoordinate_t horizontalCoordinate, PictureCoordinate_t startCoordinate,
+	                       PictureCoordinate_t sweepWidth, vector<WhiteSegmentDescriptor>* whiteSegmentVector_p );
 
 public:
 	typedef enum {
