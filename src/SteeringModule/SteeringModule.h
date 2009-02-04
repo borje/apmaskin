@@ -1,32 +1,47 @@
-#ifndef CAMERAMODULE_H_
-#define CAMERAMODULE_H_
+/*
+ * SteeringModule.h
+ *
+ *  Created on: 2009-feb-04
+ *      Author: pero
+ */
+
+#ifndef STEERINGMODULE_H_
+#define STEERINGMODULE_H_
 
 #include "IEvent.h"
 #include "IEventListener.h"
 #include "IEventGenerator.h"
 #include "ICommandServer.h"
-
+#include "stdint.h"
 #include <list>
+
+
 
 using namespace std;
 
-class CameraModule : public IEventGenerator, ICommandServer {
-private:
-	list<IEventListener*> positionErrorListeners;
-	list<IEventListener*> intersectionFoundListeners;
-	list<IEventListener*> numberFoundListeners;
+class SteeringModule : public IEventGenerator, ICommandServer{
 public:
-	typedef enum {
-		CMD_SNAPSHOT,
-		CMD_CALIBRATE
-	} CameraCommand;
+	SteeringModule();
+	virtual ~SteeringModule();
 
-	CameraModule();
-	virtual ~CameraModule() {}
+	typedef enum {
+			CMD_INCREASE_LEFT,
+			CMD_INCREASE_RIGHT
+		} SteeringCommand;
+
 	void addEventListener(IEvent::EventType type, IEventListener* listener);	//IEventGenerator
 	void removeEventListener(IEvent::EventType type, IEventListener* listener); //IEventGenerator
 	void executeCommand(int cmdID, std::list<int> arguments); 			//ICommandServer
 	void registerCommands();											//ICommandServer
+
+	//Steering commands
+
+	void setSpeed(int8_t) {}
+
+
+private:
+	list<IEventListener*> someKindOfListener;
+
 };
 
-#endif /* CAMERAMODULE_H_ */
+#endif /* STEERINGMODULE_H_ */
