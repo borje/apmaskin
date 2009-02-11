@@ -49,3 +49,22 @@ void SteeringModule::registerCommands() {
 	ci->registerCommand("increaseleft", CMD_INCREASE_LEFT, this);
 	ci->registerCommand("increaseright", CMD_INCREASE_RIGHT, this);
 }
+
+//Assumes that the input value is between -63 and +64
+void SteeringModule::setSpeed(int8_t desiredSpeed) {
+
+	int8_t engineSpeedLeft = 0;
+	int8_t engineSpeedRight = 0;
+
+	if (desiredSpeed < 0) {
+		engineSpeedLeft = -desiredSpeed;
+		engineSpeedRight = desiredSpeed;
+		engineSpeedRight = (engineSpeedRight | 0x80);
+		cout << "engineSpeedRight = " << static_cast<int>(engineSpeedRight) << endl
+			 << "engineSpeedLeft = "  << static_cast<int>(engineSpeedLeft) << endl;
+
+	}
+	else if (desiredSpeed > 0) {
+		engineSpeedRight = 0x00;
+	}
+}

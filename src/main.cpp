@@ -13,8 +13,9 @@ int main(int argc, char *argv[]) {
 	commandInterpreter->registerCommands();
 	camera.registerCommands();
 	steerer.registerCommands();
-	commandInterpreter->start();
-	CommandInterpreterModule::destroy();
+	steerer.setSpeed(-25);
+//	commandInterpreter->start();
+//	CommandInterpreterModule::destroy();
 
 	return 0;
 }

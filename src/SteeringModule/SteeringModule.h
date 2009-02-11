@@ -36,7 +36,7 @@ public:
 
 	//Steering commands
 
-	void setSpeed(int8_t) {}
+	void setSpeed(int8_t desiredSpeed = 0);
 
 
 private:
