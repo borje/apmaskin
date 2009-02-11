@@ -14,6 +14,7 @@ int main(int argc, char *argv[]) {
 	camera.registerCommands();
 	steerer.registerCommands();
 	steerer.setSpeed(-25);
+	steerer.setSpeed(25);
 //	commandInterpreter->start();
 //	CommandInterpreterModule::destroy();
 

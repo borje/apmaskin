@@ -53,18 +53,27 @@ void SteeringModule::registerCommands() {
 //Assumes that the input value is between -63 and +64
 void SteeringModule::setSpeed(int8_t desiredSpeed) {
 
-	int8_t engineSpeedLeft = 0;
-	int8_t engineSpeedRight = 0;
+	uint8_t engineSpeedLeft = 0;
+	uint8_t engineSpeedRight = 0;
+
+	assert((desiredSpeed < 64) && (desiredSpeed > -63)); //Checks that a 7-bit number is used
 
 	if (desiredSpeed < 0) {
+		cout << "desiredSpeed = " << static_cast<int>(desiredSpeed) << endl;
 		engineSpeedLeft = -desiredSpeed;
-		engineSpeedRight = desiredSpeed;
+		engineSpeedRight = -desiredSpeed;
+		cout << "engineSpeedRight before | 0x80 = " << static_cast<int>(engineSpeedRight) << endl;
+
 		engineSpeedRight = (engineSpeedRight | 0x80);
-		cout << "engineSpeedRight = " << static_cast<int>(engineSpeedRight) << endl
+		cout << "engineSpeedRight after | 0x80 = " << static_cast<int>(engineSpeedRight) << endl
 			 << "engineSpeedLeft = "  << static_cast<int>(engineSpeedLeft) << endl;
 
 	}
 	else if (desiredSpeed > 0) {
-		engineSpeedRight = 0x00;
+		cout << "desiredSpeed = " << static_cast<int>(desiredSpeed) << endl;
+		engineSpeedLeft = (engineSpeedLeft | 0x40);
+		engineSpeedRight = (engineSpeedRight | 0xC0);
+		cout << "engineSpeedRight after = " << static_cast<int>(engineSpeedRight) << endl
+					 << "engineSpeedLeft = "  << static_cast<int>(engineSpeedLeft) << endl;
 	}
 }
