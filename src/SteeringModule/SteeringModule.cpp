@@ -58,7 +58,14 @@ void SteeringModule::setSpeed(int8_t desiredSpeed) {
 
 	assert((desiredSpeed < 64) && (desiredSpeed >= -63)); //Checks that a 7-bit number is used
 
-	if (desiredSpeed < 0) {
+	if (desiredSpeed > 0) {
+		cout << "desiredSpeed = " << static_cast<int>(desiredSpeed) << endl;
+		engineSpeedLeft = 64+desiredSpeed;
+		engineSpeedRight = 192+desiredSpeed;
+		cout << "engineSpeedRight after conversion = " << static_cast<int>(engineSpeedRight) << endl
+		<< "engineSpeedLeft after conversion = "  << static_cast<int>(engineSpeedLeft) << endl;
+	}
+	else if (desiredSpeed < 0) {
 		cout << "desiredSpeed = " << static_cast<int>(desiredSpeed) << endl;
 		engineSpeedLeft = 64+desiredSpeed;
 		engineSpeedRight = 192+desiredSpeed;
@@ -67,11 +74,9 @@ void SteeringModule::setSpeed(int8_t desiredSpeed) {
 		cout << "engineSpeedLeft after conversion = " << static_cast<int>(engineSpeedLeft) << endl;
 
 	}
-	else if (desiredSpeed > 0) {
-		cout << "desiredSpeed = " << static_cast<int>(desiredSpeed) << endl;
-		engineSpeedLeft = 64+desiredSpeed;
-		engineSpeedRight = 192+desiredSpeed;
-		cout << "engineSpeedRight after conversion = " << static_cast<int>(engineSpeedRight) << endl
-					 << "engineSpeedLeft after conversion = "  << static_cast<int>(engineSpeedLeft) << endl;
+	else {
+		engineSpeedLeft = 64;
+		engineSpeedRight = 192;
 	}
+
 }

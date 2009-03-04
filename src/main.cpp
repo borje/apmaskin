@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
 	steerer.setSpeed(63);
 	steerer.setSpeed(1);
 	steerer.setSpeed(32);
+	steerer.setSpeed(0);
 //	commandInterpreter->start();
 //	CommandInterpreterModule::destroy();
 
